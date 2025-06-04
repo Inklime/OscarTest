@@ -363,17 +363,17 @@ namespace kicq4WP
         }
 
 
-        private async Task SendClientReadyAsync()
+       private async Task SendClientReadyAsync()
         {
             using (var ms = new MemoryStream())
             using (var writer = new BinaryWriter(ms))
             {
-                // 11 пар (Family ID + Version)
+                // 9 пар (Family ID + Version)
                 ushort[,] families = new ushort[,]
                 {
             {0x0001, 0x0003}, // Generic
-            {0x0002, 0x0001}, // Location
-            {0x0003, 0x0001}, // Buddy List
+            //{0x0002, 0x0001}, // Location
+            //{0x0003, 0x0001}, // Buddy List
             {0x0004, 0x0001}, // Messaging
             {0x0006, 0x0001}, // Chat
             {0x0008, 0x0001}, // BOS
